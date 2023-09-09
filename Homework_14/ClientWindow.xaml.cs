@@ -10,28 +10,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Homework_14
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для EditClientWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ClientWindow : Window
     {
-        public MainWindow()
+        public ClientWindow()
         {
             InitializeComponent();
         }
-
-        private void OK_Click(object sender, RoutedEventArgs e)
+        public ClientWindow(Client client)
         {
-            if (Employee.SelectedItem != null)
-            {
-                new BankWindow(((TextBlock)Employee.SelectedItem).Text).Show();
-                this.Close();
-            }
+            InitializeComponent();
+            NameClient.Text = client.Name;
+            SurnameClient.Text = client.Surname;
+            AgeClient.Text = client.Age.ToString();
+        }
+
+        private void OKButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close(); 
         }
     }
 }

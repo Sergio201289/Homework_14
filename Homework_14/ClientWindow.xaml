@@ -1,0 +1,23 @@
+﻿<Window x:Class="Homework_14.ClientWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_14"
+        mc:Ignorable="d"
+        Title="ClientWindow" Height="300" Width="200">
+    <Grid>
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5">
+            <Label Content="Client Data:"></Label>
+            <Label Content=""></Label>
+            <Label Content="Name:"></Label>
+            <TextBox x:Name="NameClient" Width="100"></TextBox>
+            <Label Content="Surname:"></Label>
+            <TextBox x:Name="SurnameClient"></TextBox>
+            <Label Content="Age:"></Label>
+            <TextBox x:Name="AgeClient"></TextBox>
+            <Label Content=""></Label>
+            <Button x:Name="OKButton" Content="OK" Height="20" Width="70" Click="OKButton_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

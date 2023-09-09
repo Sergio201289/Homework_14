@@ -1,0 +1,26 @@
+﻿<Window x:Class="Homework_14.ClientTransferWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_14"
+        mc:Ignorable="d"
+        Title="ClientTransferWindow" Height="350" Width="300">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Выберите клиента для перевода денег"></Label>
+            <Label></Label>
+            <ListView x:Name="ClientsListView" Height="230">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="80"></GridViewColumn>
+                        <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Surname}" Width="80"></GridViewColumn>
+                        <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Age}" Width="50"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label></Label>
+            <Button x:Name="OKTransferButton" Content="OK" Width="70" Click="OKTransferButton_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

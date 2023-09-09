@@ -10,28 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Homework_14
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MoneyWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MoneyWindow : Window
     {
-        public MainWindow()
+        public MoneyWindow()
         {
             InitializeComponent();
         }
 
-        private void OK_Click(object sender, RoutedEventArgs e)
+        private void OKMoneyButton_Click(object sender, RoutedEventArgs e)
         {
-            if (Employee.SelectedItem != null)
-            {
-                new BankWindow(((TextBlock)Employee.SelectedItem).Text).Show();
-                this.Close();
-            }
+            this.Close();
         }
     }
 }

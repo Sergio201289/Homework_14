@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,28 +11,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Homework_14
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для LogWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LogWindow : Window
     {
-        public MainWindow()
+        public LogWindow(string path)
         {
             InitializeComponent();
-        }
-
-        private void OK_Click(object sender, RoutedEventArgs e)
-        {
-            if (Employee.SelectedItem != null)
-            {
-                new BankWindow(((TextBlock)Employee.SelectedItem).Text).Show();
-                this.Close();
-            }
+            try { foreach (var e in File.ReadAllLines(path)) { LogListView.Items.Add(e); } }
+            catch { }
         }
     }
 }

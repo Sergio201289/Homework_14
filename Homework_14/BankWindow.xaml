@@ -1,0 +1,78 @@
+﻿<Window x:Class="Homework_14.BankWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_14"
+        mc:Ignorable="d"
+        Title="BankWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"></RowDefinition>
+            <RowDefinition Height="247*"></RowDefinition>
+            <RowDefinition Height="145*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="110*"></ColumnDefinition>
+            <ColumnDefinition Width="200*"></ColumnDefinition>
+            <ColumnDefinition Width="320*"></ColumnDefinition>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.Column="1" Content="Clients"></Label>
+        <Label Grid.Row="0" Grid.Column="2" Content="Client Accounts:"></Label>
+        <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center">
+            <Button x:Name="OpenRepositoryButton" Content="Open" Height="20"  Width="70" Margin="5" Click="OpenRepositoryButton_Click"></Button>
+            <Button x:Name="SaveRepositoryButton" Content="Save" Height="20"  Width="70" Margin="5" Click="SaveRepositoryButton_Click" ></Button>
+            <Button x:Name="LogButton" Content="Log" Height="20" Width="70" Margin="5" Click="LogButton_Click"></Button>
+        </StackPanel>
+        <ListView Grid.Row="1" Grid.Column="1" x:Name="ClientsListView" Margin="5" SelectionChanged="ClientsListView_SelectionChanged" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Name}" Width="80"></GridViewColumn>
+                    <GridViewColumn Header="Surname" DisplayMemberBinding="{Binding Surname}" Width="80"></GridViewColumn>
+                    <GridViewColumn Header="Age" DisplayMemberBinding="{Binding Age}" Width="50"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <StackPanel Grid.Row="2" Grid.Column="1" VerticalAlignment="Top">
+            <Label Content="Clients Action:"></Label>
+            <StackPanel Orientation="Horizontal" Height="30">
+                <Button x:Name="AddClientButton" Content="Add" Width="60" Margin="5" Click="AddClientButton_Click"></Button>
+                <Button x:Name="EditClientButton" Content="Edit" Width="60" Margin="5" Click="EditClientButton_Click"></Button>
+                <Button x:Name="DeleteClientButton" Content="Delete" Width="60" Margin="5" Click="DeleteClientButton_Click"></Button>
+            </StackPanel>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="2" Margin="5">
+            <Label Content="Deposit Account"></Label>
+            <ListView x:Name="DepositAccountListView" Height="70">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}"></GridViewColumn>
+                        <GridViewColumn Header="Number Of Account" DisplayMemberBinding="{Binding NumberOfAccount}"></GridViewColumn>
+                        <GridViewColumn Header="Balance" DisplayMemberBinding="{Binding Balance}"></GridViewColumn>
+                        <GridViewColumn Header="Opening Date" DisplayMemberBinding="{Binding DateTime}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Label></Label>
+            <Label Content="Nondeposit Account"></Label>
+            <ListView x:Name="NonDepositAccountListView" Height="70">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Status" DisplayMemberBinding="{Binding Status}"></GridViewColumn>
+                        <GridViewColumn Header="Number Of Account" DisplayMemberBinding="{Binding NumberOfAccount}"></GridViewColumn>
+                        <GridViewColumn Header="Balance" DisplayMemberBinding="{Binding Balance}"></GridViewColumn>
+                        <GridViewColumn Header="Opening Date" DisplayMemberBinding="{Binding DateTime}"></GridViewColumn>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </StackPanel>
+        <StackPanel Grid.Row="1" Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Top">
+            <Label Content="Accounts Action:"></Label>
+            <Button x:Name="OpenAccountButton" Content="Open" Width="70" Margin="5" Click="OpenAccountButton_Click"></Button>
+            <Button x:Name="CloseAccountButton" Content="Close" Width="70" Margin="5" Click="CloseAccountButton_Click"></Button>
+            <Button x:Name="RefillButton" Content="Refill" Width="70" Margin="5" Click="RefillButton_Click"></Button>
+            <Button x:Name="TransferButton" Content="Transfer" Width="70" Margin="5" Click="TransferButton_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Window>

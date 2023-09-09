@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework_14"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="250" Width="200">
     <Grid>
-        
+        <StackPanel HorizontalAlignment="Center">
+            <Label Content="Выберите аккаунт"></Label>
+            <Label Content=""></Label>
+            <ComboBox x:Name="Employee">
+                <TextBlock Text="Consultant"></TextBlock>
+                <TextBlock Text="Manager"></TextBlock>
+            </ComboBox>
+            <Label Content=""></Label>
+            <Button x:Name="OK" Height="25" Width="70" Content="OK" Click="OK_Click"></Button>
+        </StackPanel>
     </Grid>
 </Window>
